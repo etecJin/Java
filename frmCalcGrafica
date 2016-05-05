@@ -1,0 +1,38 @@
+    private void jrbSomarActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        jlblOper.setText("+");//Radio Button Somar
+    }                                        
+
+    private void jrbSubtrairActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        jlblOper.setText("-");//Radio Button Subtrair
+    }                                           
+
+    private void jrbMultiplicaActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        jlblOper.setText("*");//Radio button Multiplicar
+    }                                             
+
+    private void jrbDividirActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        jlblOper.setText("/");Radio button Dividir
+    }                                          
+
+    private void jbtnCalcularActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        try {
+            conta.setNum1(Double.valueOf( jtxbNum1.getText()));//Recebendo Num1 e convertendo.
+            conta.setNum2(Double.valueOf(jtxbNum2.getText()));
+
+            if (jrbSomar.isSelected()){
+                JOptionPane.showMessageDialog(this,conta.Somar(),"Soma:",JOptionPane.INFORMATION_MESSAGE);//exibe resposta
+                
+            }else if(jrbSubtrair.isSelected()){
+
+
+            }else if(jrbMultiplica.isSelected()){
+
+
+            }else{
+
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this,"Erro de conversão: "
+                    +e.getMessage(),"Erro:",JOptionPane.ERROR_MESSAGE);
+        }
+    } 
