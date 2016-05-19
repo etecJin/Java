@@ -1,0 +1,256 @@
+public class frmCalculadora extends javax.swing.JFrame {
+    Contas conta = new Contas();//Instanciando novo Objeto
+    String opcao="";//Var do Switch
+    double result = 0;//var para calcular
+    
+    public frmCalculadora() {
+        initComponents();
+    }
+
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        bgRadio = new javax.swing.ButtonGroup();
+        jlblNum1 = new javax.swing.JLabel();
+        jlblOper = new javax.swing.JLabel();
+        jlblNum2 = new javax.swing.JLabel();
+        jtxbNum1 = new javax.swing.JTextField();
+        jpOperacoes = new javax.swing.JPanel();
+        jrbSomar = new javax.swing.JRadioButton();
+        jrbSubtrair = new javax.swing.JRadioButton();
+        jrbMultiplica = new javax.swing.JRadioButton();
+        jrbDividir = new javax.swing.JRadioButton();
+        jbtnCalcular = new javax.swing.JButton();
+        jbtnLimpar = new javax.swing.JButton();
+        jbtnSair = new javax.swing.JButton();
+        jtxbNum2 = new javax.swing.JTextField();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("Calculadora");
+        setAlwaysOnTop(true);
+        setIconImages(null);
+        setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
+
+        jlblNum1.setText("Primeiro Numero");
+
+        jlblOper.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jlblOper.setText("+");
+
+        jlblNum2.setText("Segundo Numero");
+
+        jpOperacoes.setBorder(javax.swing.BorderFactory.createTitledBorder("Operações:"));
+
+        bgRadio.add(jrbSomar);
+        jrbSomar.setMnemonic('s');
+        jrbSomar.setSelected(true);
+        jrbSomar.setText("Somar");
+        jrbSomar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbSomarActionPerformed(evt);
+            }
+        });
+
+        bgRadio.add(jrbSubtrair);
+        jrbSubtrair.setMnemonic('b');
+        jrbSubtrair.setText("Subtrair");
+        jrbSubtrair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbSubtrairActionPerformed(evt);
+            }
+        });
+
+        bgRadio.add(jrbMultiplica);
+        jrbMultiplica.setMnemonic('m');
+        jrbMultiplica.setText("Multiplicar");
+        jrbMultiplica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbMultiplicaActionPerformed(evt);
+            }
+        });
+
+        bgRadio.add(jrbDividir);
+        jrbDividir.setMnemonic('d');
+        jrbDividir.setText("Dividir");
+        jrbDividir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbDividirActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jpOperacoesLayout = new javax.swing.GroupLayout(jpOperacoes);
+        jpOperacoes.setLayout(jpOperacoesLayout);
+        jpOperacoesLayout.setHorizontalGroup(
+            jpOperacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpOperacoesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jpOperacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jrbSomar)
+                    .addComponent(jrbSubtrair)
+                    .addComponent(jrbMultiplica)
+                    .addComponent(jrbDividir))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jpOperacoesLayout.setVerticalGroup(
+            jpOperacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpOperacoesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jrbSomar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jrbSubtrair)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jrbMultiplica)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jrbDividir))
+        );
+
+        jbtnCalcular.setMnemonic('c');
+        jbtnCalcular.setText("Calcular");
+        jbtnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnCalcularActionPerformed(evt);
+            }
+        });
+
+        jbtnLimpar.setMnemonic('l');
+        jbtnLimpar.setText("Limpar");
+        jbtnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnLimparActionPerformed(evt);
+            }
+        });
+
+        jbtnSair.setMnemonic('r');
+        jbtnSair.setText("Sair");
+        jbtnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnSairActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlblNum1)
+                            .addComponent(jtxbNum1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jpOperacoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jlblOper)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jtxbNum2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jbtnCalcular, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jbtnLimpar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jbtnSair, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jlblNum2)))
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlblNum1)
+                    .addComponent(jlblNum2))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtxbNum1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlblOper)
+                            .addComponent(jtxbNum2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jpOperacoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(jbtnCalcular)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jbtnLimpar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jbtnSair)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void jrbSomarActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        jlblOper.setText("+");//Enviando Texto para a Label do Sinal da Operação
+        conta.setNum1(Double.parseDouble(jtxbNum1.getText()));//Recebendo Numero
+        conta.setNum2(Double.parseDouble(jtxbNum2.getText()));//Recebendo Numero
+        opcao="+";//Recebendo o Argumento para o Switch
+    }                                        
+
+    private void jrbSubtrairActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        jlblOper.setText("-");
+        conta.setNum1(Double.parseDouble(jtxbNum1.getText()));
+        conta.setNum2(Double.parseDouble(jtxbNum2.getText()));
+        opcao="-";
+    }                                           
+
+    private void jrbMultiplicaActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        jlblOper.setText("*");
+        conta.setNum1(Double.parseDouble(jtxbNum1.getText()));
+        conta.setNum2(Double.parseDouble(jtxbNum2.getText()));
+        opcao="*";
+    }                                             
+
+    private void jrbDividirActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        jlblOper.setText("/");
+        conta.setNum1(Double.parseDouble(jtxbNum1.getText()));
+        conta.setNum2(Double.parseDouble(jtxbNum2.getText()));
+        opcao="/";
+    }                                          
+
+    private void jbtnCalcularActionPerformed(java.awt.event.ActionEvent evt) {                                             
+
+        switch(opcao){
+            case"+"://Switch com o Argumento passado pelo Botão
+                JOptionPane.showMessageDialog(this,conta.somar());//Executando o Calculo na Classe Contas e exibe
+                break;
+            case"-":
+                JOptionPane.showMessageDialog(this,conta.subtrair());
+                break;
+            case"*":
+                JOptionPane.showMessageDialog(this,conta.multiplicar());
+                break;
+            case"/":
+                JOptionPane.showMessageDialog(this,conta.dividir());
+                break;
+        }
+    }                                            
+
+    private void jbtnSairActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        this.Sair();//Metodo para fechar
+    }                                        
+
+    private void jbtnLimparActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        jtxbNum1.setText("");
+        jtxbNum2.setText("");
+        jrbSomar.setSelected(true);
+        jlblOper.setText("+");
+    }                                          
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {                                   
+        this.Sair();
+    }   
